@@ -5,13 +5,19 @@
 // This file contains the JS functions for index.html
 
 "use strict"
-let counter = null
-localStorage.setItem(counter, 0)
+
+function updateCookieCount() {
+  if (localStorage.getItem("counter") === null) {
+    localStorage.setItem("counter", 0)
+  }
+  let clicks = localStorage.getItem("counter")
+  document.getElementById("answer").innerHTML = clicks
+}
 
 function cookieClicked() {
   console.log("test")
-  let clicks = localStorage.getItem(counter)
-  localStorage.setItem(counter, clicks)
+  let clicks = parseInt(localStorage.getItem("counter")) + 1
+  localStorage.setItem("counter", clicks)
   // print answer
   document.getElementById("answer").innerHTML = clicks
 }
