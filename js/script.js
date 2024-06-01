@@ -15,7 +15,6 @@ function updateCookieCount() {
 }
 
 function cookieClicked() {
-  console.log("test")
   let clicks = parseInt(localStorage.getItem("counter")) + 1
   localStorage.setItem("counter", clicks)
   // print answer
